@@ -8,8 +8,11 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.idata.AgeRepository
+import com.example.idomain.GetAgeUseCase
 import com.example.mvvm_mvi.R
 import com.example.mvvm_mvi.databinding.ActivityMainBinding
+import com.example.presentation.mvi.MVIFragment
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
@@ -28,6 +31,12 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+
+        (supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main)
+            ?.childFragmentManager
+            ?.fragments
+            ?.first() as? MVIFragment)?.viewModel?.getAgeUseCase= GetAgeUseCase(AgeRepository())
 
         binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)

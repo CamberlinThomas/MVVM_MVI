@@ -3,18 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/MVVMFragment">
+    app:startDestination="@id/MVIFragment">
 
-    <fragment
-        android:id="@+id/MVVMFragment"
-        android:name="com.example.mvvm_mvi.presentation.mvvm.MVVMFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
-    </fragment>
     <fragment
         android:id="@+id/MVIFragment"
-        android:name="com.example.mvvm_mvi.presentation.mvi.MVIFragment"
+        android:name="com.example.presentation.mvi.MVIFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 

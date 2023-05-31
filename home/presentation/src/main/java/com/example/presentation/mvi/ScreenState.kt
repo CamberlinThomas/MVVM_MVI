@@ -1,0 +1,8 @@
+package com.example.presentation.mvi
+
+data class ScreenState(
+    val age: Int? = null,
+    val name: String? = null
+) {
+    val errorMessage: Boolean = age == null || name == null
+}
